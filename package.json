@@ -1,0 +1,36 @@
+{
+  "name": "boilerplate-workflow",
+  "version": "1.0.0",
+  "description": "A simple boilerplate",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "frontend",
+    "boilerplate",
+    "css",
+    "stylus",
+    "gulp",
+    "jade",
+    "js"
+  ],
+  "author": "Diogo Rodrigues",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.9.2",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-stylus": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "jeet": "^6.1.2",
+    "kouto-swiss": "^0.11.14",
+    "run-sequence": "^1.1.5",
+    "rupture": "^0.6.1"
+  }
+}
