@@ -23,6 +23,7 @@ Then you need to install the dependencies to run this boilerplate:
 - gulp js: execute js files
 - gulp css: compile stylus files
 - gulp img: compress image files
+- gulp clean: deletes all the contents of the folder "assets"
 - gulp deploy: run all tasks but not initialize watch for changes and a server
  
 ## License
