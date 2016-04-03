@@ -1,31 +1,58 @@
 /*
-* SIMPLE BOILERPLATE
-* https://github.com/mjnr/Simple-Boilerplate
-* -----------------------------------
-* Author: Milson Júnior
-* URL: https://github.com/mjnr
-* -----------------------------------
-* Project Name
-* -----------------------------------
+* Iceberg Simple Boilerplate 
+* https://github.com/diogorodrigues/iceberg-boilerplate
+* 
+* Stylesheet
+* 
 */
 
-// Config
-// -------------------------
-@require 'config/*'
 
-// Vendors
-// -------------------------
-@require 'vendors/*'
+
+// Settings
+// --------------------------------------------------
+
+@import 'jeet';              // Import Jeet to Semantic Grids (http://jeet.gs/) 
+@import 'rupture/index';     // Import Rupture to MediaQueries
+
+@import '_settings/variables'; 
+@import '_settings/aliases'; 
+@import '_settings/media-queries'; 
+@import '_settings/functions'; 
+
+
 
 // Base
-// -------------------------
-@require 'base/*'
+// --------------------------------------------------
 
-// Components
-// -------------------------
-@require 'components/*'
+@import '_base/normalize'; 
+@import '_base/generic'; 
+@import '_base/fonts'; 
+@import '_base/helpers'; 
 
-// Layouts
-// -------------------------
-@require 'jeet'
-@require 'layouts/*'
+
+
+// Atoms
+// --------------------------------------------------
+
+@require 'atoms/*';
+
+
+
+// Molecules
+// -------------------------------------------------
+
+@require 'molecules/*'
+
+
+
+// Organisms
+// --------------------------------------------------
+
+@require 'organisms/*'
+
+
+
+// Pages
+// --------------------------------------------------
+
+@require 'pages/*'

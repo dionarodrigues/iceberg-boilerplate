@@ -1,1 +1,0 @@
-function teste(){var e="Diogo",t="Rodrigues";alert(e+t)}teste();
