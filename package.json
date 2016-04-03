@@ -1,5 +1,5 @@
 {
-  "name": "Iceberg Simple Boilerplate",
+  "name": "iceberg-simple-boilerplate",
   "version": "1.0.0",
   "description": "A simple boilerplate using Gulp, Jade, Stylus and Browsersync.",
   "repository": {
