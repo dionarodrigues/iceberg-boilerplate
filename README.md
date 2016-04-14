@@ -3,6 +3,13 @@
 A simple boilerplate using Gulp, Jade, Stylus and Browsersync.
 For grid system uses Jeet with some help from Kouto Swiss for animations, and rupture for responsive utilities.
 
+Maybe you want to read about them:
+
+- [Gulp](http://gulpjs.com/)
+- [Jade](http://jade-lang.com/)
+- [Stylus](http://stylus-lang.com/)
+- [Browsersync](https://www.browsersync.io/)
+
 ## Getting Started
 First of all, you need to have installed [Node.js](https://nodejs.org/en/) and [Gulp](http://gulpjs.com/).
 

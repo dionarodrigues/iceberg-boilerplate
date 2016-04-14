@@ -1,14 +1,29 @@
 /*
 * Rupture media queries
+* https://jenius.github.io/rupture/
 * 
 * xs = extra small
 * sm = small
 * md = medium
 * lg = large
+* xlg = extra large
 *
 */
 
 
 
-rupture.scale       = 0 600px 768px 960px 1280px
-rupture.scale-names = "xs" "sm" "md" "lg"
+// Screen Sizes
+$screen-xs   = 520px  // xs
+$screen-sm   = 768px  // sm
+$screen-md   = 992px  // md
+$screen-lg   = 1200px // lg
+$screen-xlg  = 1400px // xlg 
+
+
+// Rupture Settings
+rupture.mobile-cutoff  = $screen-sm
+rupture.tablet-cutoff  = $screen-md
+rupture.desktop-cutoff = $screen-lg  
+
+rupture.scale       = 0 $screen-xs $screen-sm $screen-md $screen-lg $screen-xlg
+rupture.scale-names = '0' 'xs' 'sm' 'md' 'lg' 'xlg'

@@ -12,11 +12,11 @@
 // --------------------------------------------------
 pxtorem(prop, value) {
 	{prop}: unit(value, px);
-	{prop}: unit((value / base-font-size), rem);
+	{prop}: unit((value / $base-font-size), rem);
 }
 
 convertpxtorem(value) {
-	return unit((value / base-font-size), rem);
+	return unit((value / $base-font-size), rem);
 }
 
 
@@ -24,9 +24,9 @@ convertpxtorem(value) {
 // 2. Convert px to EM
 // --------------------------------------------------
 pxtoem(prop, value) {
-	{prop}: unit((value / base-font-size), em);
+	{prop}: unit((value / $base-font-size), em);
 }
 
 convertpxtoem(value) {
-	return unit((value / base-font-size), em);
+	return unit((value / $base-font-size), em);
 }

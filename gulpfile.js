@@ -7,7 +7,9 @@ var gulp        = require('gulp'),
     jeet        = require('jeet'),
     rupture     = require('rupture'),
     koutoSwiss  = require('kouto-swiss'),
+    rucksack    = require('gulp-rucksack'),
     prefixer    = require('autoprefixer-stylus'),
+    cssnano     = require('gulp-cssnano'),
     uglify      = require('gulp-uglify'),
     concat      = require('gulp-concat'), 
     imagemin    = require('gulp-imagemin'),
@@ -67,10 +69,10 @@ gulp.task('css', function() {
     return gulp.src(srcPaths.mainStyl)
             .pipe(plumber())
             .pipe(stylus({
-                use:[koutoSwiss(), prefixer(), jeet(), rupture()],
-                compress: true //--> minify css
+                use:[koutoSwiss(), prefixer(), jeet(), rupture()]
             }))
-            .pipe(gulp.dest(buildPaths.css))
+            .pipe(rucksack())
+            .pipe(cssnano()) //--> minify css
             .pipe(browserSync.reload({stream:true}))
             .pipe(gulp.dest(buildPaths.css))
             .pipe(reload({stream: true}));
