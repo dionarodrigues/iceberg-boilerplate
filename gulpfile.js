@@ -27,19 +27,22 @@ var gulp        = require('gulp'),
                     bower: "./bower_components/"
                 },
     srcPaths    = {
-                    js: paths.dev + 'js/**/*.js',
+                    jsVendors: paths.dev + 'js/vendor/*.js',
+                    js: paths.dev + 'js/*.js',
                     css: paths.dev + 'styl/**/*.styl',
                     mainStyl: paths.dev + 'styl/main.styl',
                     jade: paths.dev + 'views/**/*.jade',
                     jadePages: paths.dev + 'views/pages/*.jade',
-                    img: paths.dev + 'img/**/*.{jpg,png,gif,svg}'
+                    img: paths.dev + 'img/**/*.{jpg,png,gif,svg}',
+                    fonts: paths.dev + 'fonts/*',
                 },
     buildPaths  = {
                     build: paths.dest + '**/*',
                     js: paths.dest + 'js/',
                     css: paths.dest + 'css/',
                     jade: './',
-                    img: paths.dest + 'img'
+                    img: paths.dest + 'img',
+                    fonts: paths.dest + 'css/fonts',
                 };
 
 
@@ -79,9 +82,18 @@ gulp.task('css', function() {
 });
 
 
+// Fonts task
+gulp.task('fonts', function() {
+    return gulp.src(srcPaths.fonts)
+            .pipe(plumber())
+            .pipe(gulp.dest(buildPaths.fonts))
+            .pipe(reload({stream: true}));
+});
+
+
 // Javascript Task
 gulp.task('js', function() {
-    return gulp.src(srcPaths.js)
+    return gulp.src([srcPaths.jsVendors, srcPaths.js])
             .pipe(plumber())
             .pipe(concat('main.js'))
             .pipe(uglify()) //--> minify js
@@ -133,9 +145,9 @@ gulp.task('browser-sync', ['jade'], function() {
 // Run Sequence allows you to perform the 'clean' task before others
 // It also allows to ascertain the exact time of 'default' with callback
 gulp.task('default', function(cb) {
-    return runSequence('clean', ['jade', 'js', 'css', 'img', 'browser-sync', 'watch'], cb);
+    return runSequence('clean', ['jade', 'js', 'css', 'img', 'fonts', 'browser-sync', 'watch'], cb);
 });
 
 gulp.task('deploy', function(cb) {
-    return runSequence('clean', ['jade', 'js', 'css', 'img'], cb);
+    return runSequence('clean', ['jade', 'js', 'css', 'img', 'fonts'], cb);
 });
