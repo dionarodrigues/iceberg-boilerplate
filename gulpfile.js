@@ -23,7 +23,7 @@ var gulp        = require('gulp'),
     // Paths
     paths        = {
                     dev: "./src/",
-                    dest: "./assets/",
+                    dest: "./deploy/assets/",
                     bower: "./bower_components/"
                 },
     srcPaths    = {
@@ -32,7 +32,7 @@ var gulp        = require('gulp'),
                     css: paths.dev + 'styl/**/*.styl',
                     mainStyl: paths.dev + 'styl/main.styl',
                     jade: paths.dev + 'views/**/*.jade',
-                    jadePages: paths.dev + 'views/pages/*.jade',
+                    jadePages: paths.dev + 'views/pages/**/*.jade',
                     img: paths.dev + 'img/**/*.{jpg,png,gif,svg}',
                     fonts: paths.dev + 'fonts/*',
                 },
@@ -40,7 +40,7 @@ var gulp        = require('gulp'),
                     build: paths.dest + '**/*',
                     js: paths.dest + 'js/',
                     css: paths.dest + 'css/',
-                    jade: './',
+                    jade: './deploy/',
                     img: paths.dest + 'img',
                     fonts: paths.dest + 'css/fonts',
                 };
@@ -136,7 +136,7 @@ gulp.task('watch', function () {
 gulp.task('browser-sync', ['jade'], function() {    
     browserSync({
         server: {
-            baseDir: './'
+            baseDir: 'deploy'
         }
     });
 });
