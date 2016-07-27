@@ -24,6 +24,36 @@ Then you need to install the dependencies to run this boilerplate:
 > $ npm install
 ```
 
+## Folders and Files
+
+```sh
+├── README.md
+├── deploy
+│   ├── assets
+│   │   ├── css 
+│   │   │   └── main.css
+│   │   │   ├── fonts
+│   │   ├── img
+│   │   ├── js 
+│   │   │   └── main.js
+│   ├── index.html
+├── gulpfile.js
+├── package.json
+└── src
+    ├── fonts/
+    ├── img/
+    ├── js/
+    ├── styl
+    │   ├── _settings/*.styl
+    │   ├── _base/*.styl
+    │   ├── atoms/*.styl
+    │   ├── molecules/*.styl
+    │   ├── organisms/*.styl
+    │   ├── pages/*.styl
+    │   └── main.styl
+    └── views
+```
+
 ## Main Tasks
 - gulp: run all tasks and initialize watch for changes and a server
 - gulp jade: compile jade files
