@@ -1,12 +1,12 @@
 ![android-chrome-192x192](https://cloud.githubusercontent.com/assets/1757632/14230808/2d8d5094-f93e-11e5-8a73-f9b894fa57df.png)
 # Iceberg Simple Boilerplate
-A simple boilerplate using Gulp, Jade, Stylus and Browsersync.
+A simple boilerplate using Gulp, Pug(formerly Jade), Stylus and Browsersync.
 For grid system uses Jeet with some help from Kouto Swiss for animations, and rupture for responsive utilities.
 
 Maybe you want to read about them:
 
 - [Gulp](http://gulpjs.com/)
-- [Jade](http://jade-lang.com/)
+- [Pug](https://pugjs.org/)
 - [Stylus](http://stylus-lang.com/)
 - [Browsersync](https://www.browsersync.io/)
 
@@ -56,7 +56,7 @@ Then you need to install the dependencies to run this boilerplate:
 
 ## Main Tasks
 - gulp: run all tasks and initialize watch for changes and a server
-- gulp jade: compile jade files
+- gulp pug: compile pug files
 - gulp js: execute js files
 - gulp css: compile stylus files
 - gulp fonts: move fonts files
