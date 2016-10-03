@@ -1,7 +1,7 @@
 "use strict";
 
 var gulp        = require('gulp'),
-    jade        = require('gulp-jade'),
+    pug         = require('gulp-pug'),
     clean       = require('gulp-clean'),       
     stylus      = require('gulp-stylus'),
     jeet        = require('jeet'),
@@ -31,8 +31,8 @@ var gulp        = require('gulp'),
                     js: paths.dev + 'js/*.js',
                     css: paths.dev + 'styl/**/*.styl',
                     mainStyl: paths.dev + 'styl/main.styl',
-                    jade: paths.dev + 'views/**/*.jade',
-                    jadePages: paths.dev + 'views/pages/**/*.jade',
+                    pug: paths.dev + 'views/**/*.pug',
+                    pugPages: paths.dev + 'views/pages/**/*.pug',
                     img: paths.dev + 'img/**/*.{jpg,png,gif,svg}',
                     fonts: paths.dev + 'fonts/*',
                 },
@@ -40,7 +40,7 @@ var gulp        = require('gulp'),
                     build: paths.dest + '**/*',
                     js: paths.dest + 'js/',
                     css: paths.dest + 'css/',
-                    jade: './deploy/',
+                    pug: './deploy/',
                     img: paths.dest + 'img',
                     fonts: paths.dest + 'css/fonts',
                 };
@@ -54,15 +54,15 @@ gulp.task('clean', function() {
 });
 
 
-// Jade Task 
-gulp.task('jade', function() { 
-    return gulp.src(srcPaths.jadePages)
+// Pug Task 
+gulp.task('pug', function() { 
+    return gulp.src(srcPaths.pugPages)
         .pipe(plumber())
-        .pipe(jade({
+        .pipe(pug({
             client: false,
             pretty: true
         }))
-        .pipe(gulp.dest(buildPaths.jade))
+        .pipe(gulp.dest(buildPaths.pug))
         .pipe(reload({stream: true}));
 });
 
@@ -112,7 +112,7 @@ gulp.task('img', function() {
 });
 
 
-// Watch stylus files, js files, img files and jade files for changes and recompile
+// Watch stylus files, js files, img files and pug files for changes and recompile
 gulp.task('watch', function () {
     watch(srcPaths.css, batch(function(event, done){
         gulp.start('css', done);
@@ -126,14 +126,14 @@ gulp.task('watch', function () {
         gulp.start('img', done);
     }));
 
-    watch(srcPaths.jade, batch(function(event, done){
-        gulp.start('jade', done);
+    watch(srcPaths.pug, batch(function(event, done){
+        gulp.start('pug', done);
     }));
 });
 
 
-// Wait for jade, then launch the Server
-gulp.task('browser-sync', ['jade'], function() {    
+// Wait for pug, then launch the Server
+gulp.task('browser-sync', ['pug'], function() {    
     browserSync({
         server: {
             baseDir: 'deploy'
@@ -145,9 +145,9 @@ gulp.task('browser-sync', ['jade'], function() {
 // Run Sequence allows you to perform the 'clean' task before others
 // It also allows to ascertain the exact time of 'default' with callback
 gulp.task('default', function(cb) {
-    return runSequence('clean', ['jade', 'js', 'css', 'img', 'fonts', 'browser-sync', 'watch'], cb);
+    return runSequence('clean', ['pug', 'js', 'css', 'img', 'fonts', 'browser-sync', 'watch'], cb);
 });
 
 gulp.task('deploy', function(cb) {
-    return runSequence('clean', ['jade', 'js', 'css', 'img', 'fonts'], cb);
+    return runSequence('clean', ['pug', 'js', 'css', 'img', 'fonts'], cb);
 });
