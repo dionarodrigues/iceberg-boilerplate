@@ -35,7 +35,10 @@ Then you need to install the dependencies to run this boilerplate:
 │   │   │   ├── fonts
 │   │   ├── img
 │   │   ├── js 
-│   │   │   └── main.js
+│   │   │   └── libs/*.js
+│   │   │   ├── plugins/*.js
+│   │   │   ├── modules/*.js
+│   │   │   ├── main.js
 │   ├── index.html
 ├── gulpfile.js
 ├── package.json

@@ -11,6 +11,7 @@ var gulp        = require('gulp'),
     prefixer    = require('autoprefixer-stylus'),
     cssnano     = require('gulp-cssnano'),
     uglify      = require('gulp-uglify'),
+    jshint      = require("gulp-jshint"),
     concat      = require('gulp-concat'), 
     imagemin    = require('gulp-imagemin'),
     browserSync = require('browser-sync'),
@@ -27,13 +28,19 @@ var gulp        = require('gulp'),
                     bower: "./bower_components/"
                 },
     srcPaths    = {
-                    jsVendors: paths.dev + 'js/vendor/*.js',
                     js: paths.dev + 'js/*.js',
+                    jsLibs: paths.dev + 'js/libs/*.js',
+                    jsPlugins: paths.dev + 'js/plugins/*.js',
+                    jsModules: paths.dev + 'js/modules/*.js',
+
                     css: paths.dev + 'styl/**/*.styl',
                     mainStyl: paths.dev + 'styl/main.styl',
+
                     pug: paths.dev + 'views/**/*.pug',
                     pugPages: paths.dev + 'views/pages/**/*.pug',
+
                     img: paths.dev + 'img/**/*.{jpg,png,gif,svg}',
+
                     fonts: paths.dev + 'fonts/*',
                 },
     buildPaths  = {
@@ -93,10 +100,13 @@ gulp.task('fonts', function() {
 
 // Javascript Task
 gulp.task('js', function() {
-    return gulp.src([srcPaths.jsVendors, srcPaths.js])
+    return gulp.src([ srcPaths.jsLibs, srcPaths.jsPlugins, srcPaths.jsModules, srcPaths.js ])
             .pipe(plumber())
+            .pipe(jshint())
+            .pipe(jshint.reporter('default'))
             .pipe(concat('main.js'))
             .pipe(uglify()) //--> minify js
+            .pipe(browserSync.reload({stream:true}))
             .pipe(gulp.dest(buildPaths.js))
             .pipe(reload({stream: true}));
 });
@@ -118,7 +128,7 @@ gulp.task('watch', function () {
         gulp.start('css', done);
     }));
 
-    watch(srcPaths.js, batch(function(event, done){
+    watch([srcPaths.jsModules, srcPaths.js], batch(function(event, done){
         gulp.start('js', done);
     }));
 
