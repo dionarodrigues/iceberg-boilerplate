@@ -52,7 +52,6 @@ Then you need to install the dependencies to run this boilerplate:
     │   ├── atoms/*.styl
     │   ├── molecules/*.styl
     │   ├── organisms/*.styl
-    │   ├── vendor/*.styl
     │   ├── pages/*.styl
     │   └── main.styl
     └── views
@@ -67,10 +66,7 @@ Then you need to install the dependencies to run this boilerplate:
 - gulp img: compress image files
 - gulp clean: deletes all the contents of the folder "assets"
 - gulp deploy: run all tasks but not initialize watch for changes and a server
-
-## Comments
-The boilerplate was changed to support the bootstrap in the Volunteer project. See the [original boilerplate](https://github.com/diogorodrigues/iceberg-boilerplate).
-
+ 
 ## License
 MIT License
 

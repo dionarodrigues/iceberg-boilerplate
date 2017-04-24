@@ -1,37 +1,59 @@
 /*
 * Helpers
 * 
+* 1. Floats
+* 2. Toggling content
+* 3. For Affix plugin
+* 4. Margins and Paddings
+*
 */
 
 
 
-// Margins and Paddings
-.no-margin {
-	margin: 0 !important;
-}
+// 1. Floats
+// --------------------------------------------------
+.clearfix
+  cf()
 
-.no-padding {
-	padding: 0 !important;
-}
+.center-block
+  center-block()
 
-// Text aligns
-.align-center {
-	text-align: center !important;
-}
+.pull-right
+  float right !important
 
-.align-left {
-	text-align: left !important;
-}
+.pull-left
+  float left !important
 
-.align-right {
-	text-align: right !important;
-}
 
-// Floats
-.to-right {
-	float: right !important;
-}
 
-.to-left {
-	float: left !important;
-}
+// 2. Toggling content
+// --------------------------------------------------
+.hide
+.hidden
+  display none !important
+
+.show
+  display block !important
+
+.invisible
+  visibility hidden
+
+.text-hide
+  text-hide()
+
+
+
+// 3. For Affix plugin
+// --------------------------------------------------
+.affix
+  position fixed
+
+
+
+// 4. Margins and Paddings
+// --------------------------------------------------
+.no-margin
+	margin: 0 !important
+
+.no-padding
+	padding 0 !important

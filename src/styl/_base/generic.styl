@@ -1,30 +1,58 @@
 /*
 * Generic styles
 * 
+* 1. Reset the box-sizing
+* 2. Body reset
+* 3. Links
+* 4. Images
+*
 */
 
 
 
+// 1. Reset the box-sizing
+// --------------------------------------------------
 *  
 	box-sizing border-box  
   
 	&:before
 	&:after 
 		box-sizing border-box 
-  
 
-html  
-	font-size 10px
-	font-size responsive 8px 10px
+
+
+// 2. Body reset
+// --------------------------------------------------
+html 
+	font-size $text-size	 
 	
 body
-	font-size $text-size
+	pxtorem( font-size, 15 )
+	font-family $font-default
+	color $text-color
+	background-color $monochrome-0
 
+
+
+// 3. Links
+// --------------------------------------------------
 a
-	color $brand-primary
-	&:hover
-		color $blue-light	
+  color $brand-primary
+  text-decoration none
 
+  &:hover,
+  &:focus
+    color $brand-secondary
+    text-decoration none
+
+  &:focus
+    tab-focus()	
+
+
+
+// 4. Images
+// --------------------------------------------------
 img
+	vertical-align middle
 	max-width 100%
 	height auto
