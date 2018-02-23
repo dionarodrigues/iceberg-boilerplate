@@ -31,9 +31,7 @@ const paths = {
 
 const srcPaths = {
   js: paths.dev + 'js/*.js',
-  jsLibs: paths.dev + 'js/libs/*.js',
-  jsPlugins: paths.dev + 'js/plugins/*.js',
-  jsModules: paths.dev + 'js/modules/*.js',
+  jsModules: paths.dev + 'js/modules/**/*.js',
 
   css: paths.dev + 'styl/**/*.styl',
   styl: paths.dev + 'styl/main.styl',
@@ -57,7 +55,11 @@ const buildPaths = {
 // Clean all 'dest' directory before generating the files
 gulp.task('clean', () => {
   return del( paths.build );
-});
+});[
+  '/path/to/app.js',
+  '/path/to/mymodule/mymodule.js',
+  '/path/to/mymodule/mymodule/*.js'
+]
 
 // Pug Task
 gulp.task('html', () => {
@@ -97,7 +99,7 @@ gulp.task('fonts', () => {
 
 // Javascript Task
 gulp.task('js', () => {
-  return gulp.src([srcPaths.jsLibs, srcPaths.jsPlugins, srcPaths.jsModules, srcPaths.js])
+  return gulp.src([srcPaths.jsModules, srcPaths.js])
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(babel({
