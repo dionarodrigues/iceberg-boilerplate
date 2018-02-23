@@ -27,12 +27,12 @@
 
 		// Variables
 		var $mainpage						= $('.main-page'),
-			$btn							= $mainpage.find('.btn');	
-			
+			$btn							= $mainpage.find('.btn');
+
 
 		// Animated It - Show Fade
-		iceberg.animatedIt.showFade( $btn );	
+		iceberg.animatedIt.showFade( $btn );
 
-	});
+    });
 
-})( window, document, jQuery );  
+})( window, document, jQuery );

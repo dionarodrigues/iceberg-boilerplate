@@ -1,10 +1,19 @@
-# editorconfig.org
+# EditorConfig is awesome: http://EditorConfig.org
+
+# All editors
 root = true
 
+# All files
 [*]
-indent_style = spaces
-indent_size = 4
-end_of_line = lf
+
+# Set default charset
 charset = utf-8
-trim_trailing_whitespace = true
+
+# Space indentation 
+indent_style = space
+indent_size = 2
+
+# New lines
+end_of_line = lf
 insert_final_newline = true
+trim_trailing_whitespace = true

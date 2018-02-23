@@ -2,10 +2,18 @@
   "name": "iceberg-simple-boilerplate",
   "version": "1.0.0",
   "description": "A simple boilerplate using Gulp, Jade, Stylus and Browsersync.",
+  "browserslist": [
+    "> 5%",
+    "last 2 versions"
+  ],
   "scripts": {
     "start": "gulp",
     "setup": "npm i && gulp build",
-    "build": "gulp build"
+    "build": "gulp build",
+    "html": "gulp html",
+    "js": "gulp js",
+    "css": "gulp css",
+    "images": "gulp img"
   },
   "repository": {
     "type": "git",
@@ -28,22 +36,24 @@
   "homepage": "https://github.com/diogorodrigues/iceberg-boilerplate#readme",
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
     "gulp-batch": "^1.0.5",
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-imagemin": "^4.1.0",
-    "gulp-jshint": "^2.1.0",
     "gulp-plumber": "^1.2.0",
     "gulp-pug": "^3.3.0",
     "gulp-rucksack": "^0.1.4",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-stylus": "^2.7.0",
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^5.0.0",
     "jeet": "^7.2.0",
-    "jshint": "^2.9.5",
     "kouto-swiss": "^1.1.0",
     "run-sequence": "^2.2.1",
     "rupture": "^0.7.1"
