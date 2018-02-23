@@ -4,7 +4,6 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const pug = require('gulp-pug');
-const clean = require('gulp-clean');
 const stylus = require('gulp-stylus');
 const jeet = require('jeet');
 const rupture = require('rupture');
@@ -21,11 +20,13 @@ const plumber = require('gulp-plumber');
 const watch = require('gulp-watch');
 const batch = require('gulp-batch');
 const runSequence = require('run-sequence');
+const del = require('del');
 
 // Paths
 const paths = {
-  dev: "./src/",
-  dest: "./build/assets/"
+  dev: './src/',
+  dest: './build/assets/',
+  build: 'build/**/*'
 };
 
 const srcPaths = {
@@ -54,13 +55,12 @@ const buildPaths = {
 };
 
 // Clean all 'dest' directory before generating the files
-gulp.task('clean', function () {
-  return gulp.src(paths.dest + '*')
-    .pipe(clean());
+gulp.task('clean', () => {
+  return del( paths.build );
 });
 
 // Pug Task
-gulp.task('html', function () {
+gulp.task('html', () => {
   return gulp.src(srcPaths.pugPages)
     .pipe(plumber())
     .pipe(pug({
@@ -72,7 +72,7 @@ gulp.task('html', function () {
 });
 
 // CSS task
-gulp.task('css', function () {
+gulp.task('css', () => {
   return gulp.src(srcPaths.styl)
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -88,7 +88,7 @@ gulp.task('css', function () {
 });
 
 // Fonts task
-gulp.task('fonts', function () {
+gulp.task('fonts', () => {
   return gulp.src(srcPaths.fonts)
     .pipe(plumber())
     .pipe(gulp.dest(buildPaths.fonts))
@@ -96,7 +96,7 @@ gulp.task('fonts', function () {
 });
 
 // Javascript Task
-gulp.task('js', function () {
+gulp.task('js', () => {
   return gulp.src([srcPaths.jsLibs, srcPaths.jsPlugins, srcPaths.jsModules, srcPaths.js])
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -112,7 +112,7 @@ gulp.task('js', function () {
 });
 
 // Img Task
-gulp.task('img', function () {
+gulp.task('img', () => {
   return gulp.src(srcPaths.img)
     .pipe(plumber())
     .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true, cache: false }))
@@ -121,7 +121,7 @@ gulp.task('img', function () {
 });
 
 // Watch stylus files, js files, img files and pug files for changes and recompile
-gulp.task('watch', function () {
+gulp.task('watch', () => {
   watch(srcPaths.css, batch(function (event, done) {
     gulp.start('css', done);
   }));
@@ -140,20 +140,28 @@ gulp.task('watch', function () {
 });
 
 // Wait for html, then launch the Server
-gulp.task('browser-sync', ['html'], function () {
-  browserSync({
+gulp.task('browser-sync', ['html'], () => {
+  browserSync.init({
     server: {
-      baseDir: 'build'
+      baseDir: './build'
     }
   });
 });
 
-// Run Sequence allows you to perform the 'clean' task before others
-// It also allows to ascertain the exact time of 'default' with callback
-gulp.task('default', function (cb) {
-  return runSequence('clean', ['html', 'js', 'css', 'img', 'fonts', 'browser-sync', 'watch'], cb);
+// Default and Build tasks
+gulp.task('build', ['clean'], () => {
+  gulp.start(
+    'html',
+    'js',
+    'css',
+    'img',
+    'fonts'
+  );
 });
 
-gulp.task('build', function (cb) {
-  return runSequence('clean', ['html', 'js', 'css', 'img', 'fonts'], cb);
+gulp.task('default', ['build'], () => {
+  gulp.start(
+    'watch',
+    'browser-sync'
+  );
 });
