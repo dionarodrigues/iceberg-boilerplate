@@ -2,7 +2,7 @@
 
 var gulp        = require('gulp'),
     pug         = require('gulp-pug'),
-    clean       = require('gulp-clean'),       
+    clean       = require('gulp-clean'),
     stylus      = require('gulp-stylus'),
     jeet        = require('jeet'),
     rupture     = require('rupture'),
@@ -12,19 +12,19 @@ var gulp        = require('gulp'),
     cssnano     = require('gulp-cssnano'),
     uglify      = require('gulp-uglify'),
     jshint      = require("gulp-jshint"),
-    concat      = require('gulp-concat'), 
+    concat      = require('gulp-concat'),
     imagemin    = require('gulp-imagemin'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
     plumber     = require('gulp-plumber'),
-    watch       = require('gulp-watch'), 
-    batch       = require('gulp-batch'),       
+    watch       = require('gulp-watch'),
+    batch       = require('gulp-batch'),
     runSequence = require('run-sequence'),
 
     // Paths
     paths        = {
                     dev: "./src/",
-                    dest: "./deploy/assets/",
+                    dest: "./build/assets/",
                     bower: "./bower_components/"
                 },
     srcPaths    = {
@@ -47,7 +47,7 @@ var gulp        = require('gulp'),
                     build: paths.dest + '**/*',
                     js: paths.dest + 'js/',
                     css: paths.dest + 'css/',
-                    pug: './deploy/',
+                    pug: './build/',
                     img: paths.dest + 'img',
                     fonts: paths.dest + 'css/fonts',
                 };
@@ -61,8 +61,8 @@ gulp.task('clean', function() {
 });
 
 
-// Pug Task 
-gulp.task('pug', function() { 
+// Pug Task
+gulp.task('html', function() {
     return gulp.src(srcPaths.pugPages)
         .pipe(plumber())
         .pipe(pug({
@@ -137,16 +137,16 @@ gulp.task('watch', function () {
     }));
 
     watch(srcPaths.pug, batch(function(event, done){
-        gulp.start('pug', done);
+        gulp.start('html', done);
     }));
 });
 
 
-// Wait for pug, then launch the Server
-gulp.task('browser-sync', ['pug'], function() {    
+// Wait for html, then launch the Server
+gulp.task('browser-sync', ['html'], function() {
     browserSync({
         server: {
-            baseDir: 'deploy'
+            baseDir: 'build'
         }
     });
 });
@@ -155,9 +155,9 @@ gulp.task('browser-sync', ['pug'], function() {
 // Run Sequence allows you to perform the 'clean' task before others
 // It also allows to ascertain the exact time of 'default' with callback
 gulp.task('default', function(cb) {
-    return runSequence('clean', ['pug', 'js', 'css', 'img', 'fonts', 'browser-sync', 'watch'], cb);
+    return runSequence('clean', ['html', 'js', 'css', 'img', 'fonts', 'browser-sync', 'watch'], cb);
 });
 
-gulp.task('deploy', function(cb) {
-    return runSequence('clean', ['pug', 'js', 'css', 'img', 'fonts'], cb);
+gulp.task('build', function(cb) {
+    return runSequence('clean', ['html', 'js', 'css', 'img', 'fonts'], cb);
 });

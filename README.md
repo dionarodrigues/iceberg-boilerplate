@@ -19,7 +19,7 @@ Then you need to install the dependencies to run this boilerplate:
 > # Clone this repository
 > $ git clone https://github.com/diogorodrigues/iceberg-boilerplate.git
 > $ cd iceberg-boilerplate
-> 
+>
 > # install dependencies
 > $ npm install
 ```
@@ -28,13 +28,13 @@ Then you need to install the dependencies to run this boilerplate:
 
 ```sh
 ├── README.md
-├── deploy
+├── build
 │   ├── assets
-│   │   ├── css 
+│   │   ├── css
 │   │   │   └── main.css
 │   │   │   ├── fonts
 │   │   ├── img
-│   │   ├── js 
+│   │   ├── js
 │   │   │   └── libs/*.js
 │   │   │   ├── plugins/*.js
 │   │   │   ├── modules/*.js
@@ -59,14 +59,14 @@ Then you need to install the dependencies to run this boilerplate:
 
 ## Main Tasks
 - gulp: run all tasks and initialize watch for changes and a server
-- gulp pug: compile pug files
+- gulp html: compile pug files
 - gulp js: execute js files
 - gulp css: compile stylus files
 - gulp fonts: move fonts files
 - gulp img: compress image files
 - gulp clean: deletes all the contents of the folder "assets"
-- gulp deploy: run all tasks but not initialize watch for changes and a server
- 
+- gulp build: run all tasks but not initialize watch for changes and a server
+
 ## License
 MIT License
 

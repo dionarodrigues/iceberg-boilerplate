@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A simple boilerplate using Gulp, Jade, Stylus and Browsersync.",
   "scripts": {
-    "deploy": "gulp deploy",
-    "serve": "gulp"
+    "start": "gulp",
+    "setup": "npm i && gulp build",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
