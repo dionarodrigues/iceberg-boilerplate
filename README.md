@@ -1,6 +1,8 @@
 ![android-chrome-192x192](https://cloud.githubusercontent.com/assets/1757632/14230808/2d8d5094-f93e-11e5-8a73-f9b894fa57df.png)
 # Iceberg Simple Boilerplate
+
 [![license](https://img.shields.io/github/license/diogorodrigues/iceberg-boilerplate.svg)](./license.md)
+
 A simple boilerplate using Gulp, Pug(formerly Jade), Stylus and Browsersync.
 For grid system uses Jeet with some help from Kouto Swiss for animations, and rupture for responsive utilities.
 
