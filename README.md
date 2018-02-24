@@ -32,8 +32,8 @@ Then you need to install the dependencies to run this boilerplate:
 $ git clone https://github.com/diogorodrigues/iceberg-boilerplate.git
 $ cd iceberg-boilerplate
 
-$ npm install       # install dependencies
-$ npm run setup     # or for install dependencies and build
+$ npm install       # install all dependencies
+$ npm run setup     # or install all dependencies and build
 ```
 
 ## File Structure
@@ -80,7 +80,7 @@ iceberg-boilerplate
 
 - `npm run start` - run all tasks and initialize watch for changes and a server
 - `npm run test` - lint javascript
-- `npm run setup` - lint javascript
+- `npm run setup` - install all dependencies and build
 - `npm run build` - run all tasks to build
 
 ### Other Tasks
