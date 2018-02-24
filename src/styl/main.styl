@@ -8,33 +8,24 @@
 
 
 
-// Settings
+// Core
 // --------------------------------------------------
 
-@import 'jeet';              // Import Jeet to Semantic Grids (http://jeet.gs/) 
-@import 'rupture/index';     // Import Rupture to MediaQueries
+@import 'jeet'
+@import 'rupture/index'
 
-@import '_settings/variables'; 
-@import '_settings/aliases'; 
-@import '_settings/media-queries'; 
-@import '_settings/functions'; 
+@import '_core/_variables'
+@import '_core/helpers'
+@import '_core/reset'
+@import '_core/generic'
 
-
-
-// Base
-// --------------------------------------------------
-
-@import '_base/normalize'; 
-@import '_base/generic'; 
-@import '_base/fonts'; 
-@import '_base/helpers'; 
 
 
 
 // Atoms
 // --------------------------------------------------
 
-@require 'atoms/*';
+@require 'atoms/*'
 
 
 

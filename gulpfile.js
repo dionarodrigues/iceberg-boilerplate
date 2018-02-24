@@ -7,7 +7,6 @@ const pug = require('gulp-pug');
 const stylus = require('gulp-stylus');
 const jeet = require('jeet');
 const rupture = require('rupture');
-const koutoSwiss = require('kouto-swiss');
 const rucksack = require('gulp-rucksack');
 const prefixer = require('autoprefixer-stylus');
 const cssnano = require('gulp-cssnano');
@@ -79,7 +78,7 @@ gulp.task('css', () => {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(stylus({
-      use: [koutoSwiss(), prefixer(), jeet(), rupture()]
+      use: [prefixer(), jeet(), rupture()]
     }))
     .pipe(rucksack())
     .pipe(cssnano()) //--> minify css

@@ -6,17 +6,18 @@
 
 
 button()
-	position relative	
-	padding $space	
-	border-radius 5px
-	text-transform uppercase
 	background $brand-primary
-	color #fff
+	border-radius 5px
+	color $monochrome-0
+	padding $space	
+	position relative	
+	pxtorem(font-size, 15)	
+	text-transform uppercase
 	transition .2s
-	pxtorem(font-size, 15)
+	
 	&:hover
-		color #fff
 		background lightness($brand-primary, 55%)
+		color $monochrome-0		
 
 .btn	
 	button()

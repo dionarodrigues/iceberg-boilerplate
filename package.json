@@ -9,7 +9,10 @@
   "scripts": {
     "setup": "npm i && gulp build",
     "start": "gulp",
-    "test": "./node_modules/.bin/eslint ./src/",
+    "fix": "./node_modules/.bin/eslint ./src/ --fix",
+    "test": "npm run lint:js && npm run lint:css",
+    "lint:js": "./node_modules/.bin/eslint ./src/",
+    "lint:css": "./node_modules/.bin/stylint ./src/",
     "precommit": "npm run test",
     "build": "gulp build",
     "html": "gulp html",
@@ -60,8 +63,9 @@
     "gulp-watch": "^5.0.0",
     "husky": "^0.14.3",
     "jeet": "^7.2.0",
-    "kouto-swiss": "^1.1.0",
+    "parker": "0.0.10",
     "run-sequence": "^2.2.1",
-    "rupture": "^0.7.1"
+    "rupture": "^0.7.1",
+    "stylint": "^1.5.9"
   }
 }

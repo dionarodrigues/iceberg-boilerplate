@@ -3,9 +3,10 @@
 * 
 * 1. Colors
 * 2. Spaces
-* 3. Typography
-* 4. Fonts
-* 5. Dimensions
+* 3. Media Queries
+* 4. Typography
+* 5. Fonts
+* 6. Dimensions
 *
 */
 
@@ -14,8 +15,7 @@
 // 1. Colors
 // --------------------------------------------------
 
-// Grays
-$white				= #fff	 
+// Grays	 
 $gray-lighter		= #ecf0f1
 $gray-light			= #bdc3c7
 $gray				= #7f8c8d
@@ -23,7 +23,9 @@ $gray-dark			= #34495e
 $gray-darker		= #2c3e50
 
 
-// Hexas
+// Pallets
+$white				= #ffffff
+$black 				= #000000
 $green       		= #27ae60
 $yellow      		= #f1c40f
 $red         		= #c0392b
@@ -32,10 +34,9 @@ $blue-light			= #3498db
 
 
 // Brands
-$text-color    		= $gray
-
+$brand-text    		= $gray
 $brand-primary 		= $blue
-$brand-secondary	= $blue-light
+$brand-info 		= $blue
 $brand-success 		= $green
 $brand-warning 		= $yellow
 $brand-danger  		= $red
@@ -43,13 +44,11 @@ $brand-danger  		= $red
 
 // Monochrome
 $monochrome-0		= $white
-$monochrome-1		= $gray-almostWhite
 $monochrome-2		= $gray-lighter
 $monochrome-3		= $gray-light
 $monochrome-4		= $gray
 $monochrome-5		= $gray-dark
 $monochrome-6		= $gray-darker
-$monochrome-7		= $gray-almostBlack
 $monochrome-8		= $black
 
 
@@ -57,25 +56,46 @@ $monochrome-8		= $black
 // 2. Spaces
 // --------------------------------------------------
 
-$space 				= 20px
+$space 				= 2rem
+$space-xs      		= ($space / 4)
+$space-sm      		= ($space / 2)
+$space-lg      		= ($space * 2)
+$space-xlg     		= ($space * 4)
 
 
-
-// 3. Typography
+// 3. Media Queries 
 // --------------------------------------------------
 
-$text-size		   	= 62.5%;
+$screen-xs   = 520px  // xs
+$screen-sm   = 768px  // sm
+$screen-md   = 992px  // md
+$screen-lg   = 1200px // lg
+$screen-xlg  = 1400px // xlg 
+
+// Rupture Settings
+rupture.mobile-cutoff  = $screen-sm
+rupture.tablet-cutoff  = $screen-md
+rupture.desktop-cutoff = $screen-lg  
+
+rupture.scale       = 0 $screen-xs $screen-sm $screen-md $screen-lg $screen-xlg
+rupture.scale-names = '0' 'xs' 'sm' 'md' 'lg' 'xlg'
+
+
+// 4. Typography
+// --------------------------------------------------
+
+$text-size		   	= 62.5%
 $base-font-size		= 10
 
 
 
-// 4. Fonts
+// 5. Fonts
 // --------------------------------------------------
 
 $font-default		= 'Arial'
 
 
 
-// 5. Dimensions
+// 6. Dimensions
 // -------------------------------------------------
 $container-width		= 1280px

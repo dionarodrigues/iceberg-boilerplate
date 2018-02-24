@@ -13,7 +13,7 @@
 // 1. Reset the box-sizing
 // --------------------------------------------------
 *  
-	box-sizing border-box  
+  box-sizing border-box  
   
 	&:before
 	&:after 
@@ -26,23 +26,23 @@
 html 
 	font-size $text-size	 
 	
-body
-	pxtorem( font-size, 15 )
-	font-family $font-default
-	color $text-color
+body	
 	background-color $monochrome-0
+	color $brand-text
+	font-family $font-default
+	pxtorem( font-size, 15 )
 
 
 
 // 3. Links
 // --------------------------------------------------
 a
-  color $brand-primary
-  text-decoration none
-
-  &:hover,
+	color $brand-primary	
+	text-decoration none 
+	
+	&:hover,
   &:focus
-    color $brand-secondary
+    color lightness($brand-primary, 55%)
     text-decoration none
 
   &:focus
@@ -53,6 +53,6 @@ a
 // 4. Images
 // --------------------------------------------------
 img
-	vertical-align middle
-	max-width 100%
 	height auto
+	max-width 100%
+	vertical-align middle

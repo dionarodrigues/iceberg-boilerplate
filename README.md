@@ -56,8 +56,7 @@ iceberg-boilerplate
 │   ├── img/
 │   ├── js/
 │   ├── styl
-│   │   ├── _settings/*.styl
-│   │   ├── _base/*.styl
+│   │   ├── _core/*.styl
 │   │   ├── atoms/*.styl
 │   │   ├── molecules/*.styl
 │   │   ├── organisms/*.styl
