@@ -23,7 +23,7 @@ A simple boilerplate using Gulp, Pug (formerly Jade), Stylus and Browsersync and
 Make sure these are installed first.
 
 - [Node.js](https://nodejs.org/en/) 
-- [Gulp](http://gulpjs.com/) `sudo npm install -g gulp`
+- [Gulp](http://gulpjs.com/)
 
 ### Quick Start
 Then you need to install the dependencies to run this boilerplate:
