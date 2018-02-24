@@ -1,10 +1,12 @@
 ![android-chrome-192x192](https://cloud.githubusercontent.com/assets/1757632/14230808/2d8d5094-f93e-11e5-8a73-f9b894fa57df.png)
 # Iceberg Simple Boilerplate
+[![license](https://img.shields.io/github/license/diogorodrigues/iceberg-boilerplate.svg)](./license.md)
 A simple boilerplate using Gulp, Pug(formerly Jade), Stylus and Browsersync.
 For grid system uses Jeet with some help from Kouto Swiss for animations, and rupture for responsive utilities.
 
 Maybe you want to read about them:
 
+- [NPM Scripts](https://docs.npmjs.com/misc/scripts)
 - [Gulp](http://gulpjs.com/)
 - [Pug](https://pugjs.org/)
 - [Stylus](http://stylus-lang.com/)
@@ -15,13 +17,16 @@ First of all, you need to have installed [Node.js](https://nodejs.org/en/) and [
 
 Then you need to install the dependencies to run this boilerplate:
 
-```
-> # Clone this repository
-> $ git clone https://github.com/diogorodrigues/iceberg-boilerplate.git
-> $ cd iceberg-boilerplate
->
-> # install dependencies
-> $ npm install
+```sh
+# Clone this repository
+$ git clone https://github.com/diogorodrigues/iceberg-boilerplate.git
+$ cd iceberg-boilerplate
+
+# install dependencies
+$ npm install
+
+# or for install dependencies and build
+$ npm run setup
 ```
 
 ## Folders and Files
@@ -35,8 +40,6 @@ Then you need to install the dependencies to run this boilerplate:
 │   │   │   ├── fonts
 │   │   ├── img
 │   │   ├── js
-│   │   │   └── libs/*.js
-│   │   │   ├── plugins/*.js
 │   │   │   ├── modules/*.js
 │   │   │   ├── main.js
 │   ├── index.html
@@ -58,17 +61,24 @@ Then you need to install the dependencies to run this boilerplate:
 ```
 
 ## Main Tasks
-- gulp: run all tasks and initialize watch for changes and a server
-- gulp html: compile pug files
-- gulp js: execute js files
-- gulp css: compile stylus files
-- gulp fonts: move fonts files
-- gulp img: compress image files
-- gulp clean: deletes all the contents of the folder "assets"
-- gulp build: run all tasks but not initialize watch for changes and a server
+- npm run start: run all tasks and initialize watch for changes and a server
+- npm run test: lint javascript
+- npm run setup: lint javascript
+- npm run build: run all tasks to build
+- npm run html: compile pug files
+- npm run js: compile js files
+- npm run css: compile stylus files
+- npm run fonts: move fonts files
+- npm run img: compress image files
+- npm run clean: deletes all the contents of the folder "assets"
+
+## Code Standards
+This project uses [eslint](https://eslint.org/) with [airbnb preset](https://github.com/airbnb/javascript). [.editorconfig](http://editorconfig.org/) is defined to have indent_size of 2 spaces.
+
+This project also uses [Husky](https://github.com/typicode/husky) to prevent commit and push messy and wrong code. If you don't want this, you can uninstall running `npm uninstall --save-dev husky` and deleting the [precommit command](https://github.com/diogorodrigues/iceberg-boilerplate/blob/master/package.json#L13) on `package.json`.
 
 ## License
-MIT License
+[MIT License](https://diogorodrigues.mit-license.org/)
 
 © 2016 [Diogo Rodrigues](https://twitter.com/_diogorodrigues)
 

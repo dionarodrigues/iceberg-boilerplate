@@ -9,8 +9,8 @@
   "scripts": {
     "setup": "npm i && gulp build",
     "start": "gulp",
-    "lint": "./node_modules/.bin/eslint ./src/",
-    "precommit": "npm run lint",
+    "test": "./node_modules/.bin/eslint ./src/",
+    "precommit": "npm run test",
     "build": "gulp build",
     "html": "gulp html",
     "js": "gulp js",
