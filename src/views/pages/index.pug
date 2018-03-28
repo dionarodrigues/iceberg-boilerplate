@@ -1,7 +1,10 @@
-//- include ../mixins/mixins
 extends ../layouts/layout
 
+block vars
+  - var classPage = 'home-page'
+  - var titlePage = 'Iceberg Boilerplate'
+
 block content
-	.container
-		main.main-page
-			a.btn(href="https://github.com/diogorodrigues/iceberg-boilerplate") Fork me on github
+  .container
+    main.main-page
+      a.btn(href="https://github.com/diogorodrigues/iceberg-boilerplate") Fork me on github

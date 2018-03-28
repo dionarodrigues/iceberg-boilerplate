@@ -1,10 +1,10 @@
 {
   "blocks": false,
-  "brackets": { 
+  "brackets": {
     "expect": "never",
     "error": true
   },
-  "colons": { 
+  "colons": {
     "expect": "never",
     "error": true
   },
@@ -13,13 +13,13 @@
   "commentSpace": "always",
   "cssLiteral": "never",
   "customProperties": [],
-  "depthLimit": { 
+  "depthLimit": {
     "expect": 3,
     "error": true
   },
   "duplicates": true,
   "efficient": "always",
-  "exclude": [ 
+  "exclude": [
     "./_src/styl/_core/variables.styl"
   ],
   "extendPref": false,
@@ -48,12 +48,12 @@
     "showHeaders": false,
     "truncate": true
   },
-  "semicolons": { 
+  "semicolons": {
     "expect": "never",
     "error": true
   },
-  "sortOrder": { 
-    "expect": "alphabetical",
+  "sortOrder": {
+    "expect": "false",
     "error": true
   },
   "stackedProperties": "never",

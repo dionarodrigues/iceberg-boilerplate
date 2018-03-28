@@ -1,6 +1,6 @@
 /*
 * Generic styles
-* 
+*
 * 1. Reset the box-sizing
 * 2. Body reset
 * 3. Links
@@ -12,23 +12,23 @@
 
 // 1. Reset the box-sizing
 // --------------------------------------------------
-*  
-  box-sizing border-box  
-  
-	&:before
-	&:after 
-		box-sizing border-box 
+*
+  box-sizing border-box
+
+*:before
+*:after
+  box-sizing border-box
 
 
 
 // 2. Body reset
 // --------------------------------------------------
-html 
-	font-size $text-size	 
-	
-body	
-	background-color $monochrome-0
-	color $brand-text
+html
+	font-size $text-size
+
+body
+	background-color $white
+	color $theme-text
 	font-family $font-default
 	pxtorem( font-size, 15 )
 
@@ -37,16 +37,16 @@ body
 // 3. Links
 // --------------------------------------------------
 a
-	color $brand-primary	
-	text-decoration none 
-	
+	color $theme-primary
+	text-decoration none
+
 	&:hover,
   &:focus
-    color lightness($brand-primary, 55%)
+    color lightness($theme-primary, 55%)
     text-decoration none
 
   &:focus
-    tab-focus()	
+    tab-focus()
 
 
 

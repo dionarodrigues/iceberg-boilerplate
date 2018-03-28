@@ -1,26 +1,25 @@
 /*
 * Butons
-* 
+*
 */
 
 
 
 button()
-	background $brand-primary
+	background $theme-primary
 	border-radius 5px
-	color $monochrome-0
-	padding $space	
-	position relative	
-	pxtorem(font-size, 15)	
+	color $white
+	padding $space
+	position relative
+	pxtorem(font-size, 15)
 	text-transform uppercase
 	transition .2s
-	
-	&:hover
-		background lightness($brand-primary, 55%)
-		color $monochrome-0		
 
-.btn	
+	&:hover
+		background lightness($theme-primary, 55%)
+		color $white
+
+.btn
 	button()
 	display inline-block
-	
-	
+
