@@ -59,6 +59,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylus": "^2.7.0",
     "gulp-uglify": "^3.0.0",
+    "husky": "^0.14.3",
     "jeet": "^7.2.0",
     "rupture": "^0.7.1",
     "stylint": "^1.5.9",
